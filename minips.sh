@@ -3,8 +3,8 @@ pids=$(ls /proc | grep [0-9])
 for PID in $pids; do
     if [ -z $(readlink -f /proc/${PID}/exe) ]
     then
-        echo -e "${PID}\t exec: no exec path"
-        # continue
+        # echo -e "${PID}\t exec: no exec path"
+        continue
     else
         echo -e "${PID}\t exec: $(readlink -f /proc/${PID}/exe)"
     fi
