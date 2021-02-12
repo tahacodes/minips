@@ -1,2 +1,12 @@
-for PID columns:
+how it works?
+
+PID column:
     - just ls the /proc and grep it with [0-9] regex.
+
+executed file path:
+    - fist of all we have to check if any file exists in /proc/{pid}/exe.
+    - then just print out the file its linked to using readlink utility.
+
+files opened by specific proccecc:
+    - there's multiple files in /proc/{pid}/fd/* directory.
+    - walk through those files using a for loop and print out where are they pointed to, again using readlink.
