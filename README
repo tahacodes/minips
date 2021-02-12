@@ -10,3 +10,9 @@ executed file path:
 files opened by specific proccecc:
     - there's multiple files in /proc/{pid}/fd/* directory.
     - walk through those files using a for loop and print out where are they pointed to, again using readlink.
+
+#########################################
+
+why did i handled non-existing "$(readlink -f /proc/${PID}/exe)"?
+    - when you execute this script on some special distros like docker-desktop on wsl2 you'll see that there's a few PIDs which aren't linked to any exec files, also they're not opening any files either.
+    
